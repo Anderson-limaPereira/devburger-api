@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "postinstall": "npm rebuild bcrypt --build-from-source"
   },
   "author": {
     "name": "Anderson Lima",
