@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 class App {
   constructor() {
     this.app = express();
-    this.app.use(cors({origin: 'https://lanchonetedevburguer.netlify.app',}));
+    this.app.use(cors({origin: 'https://lanchonetedevburguer.netlify.app',  credentials: true,}));
     this.middlewares();
     this.routes();
     this.database = database; 
