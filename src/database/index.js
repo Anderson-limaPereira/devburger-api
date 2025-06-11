@@ -1,4 +1,4 @@
-import  {Sequelize}  from 'sequelize';
+import { Sequelize } from 'sequelize';
 import mongoose from 'mongoose';
 
 import configDatabase from '../config/database.js';
@@ -24,15 +24,17 @@ class Database {
             );
     }
 
-    mongo (){
-        this.mongoConnection = mongoose.connect(
-           'mongodb://localhost:27017/devburger',
-       );
+    mongo() {
+        this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        
+            //    'mongodb://localhost:27017/devburger',
+        });
     }
 }
 const database = new Database();
 
 export default database;
-    
-        
-    
+
+
